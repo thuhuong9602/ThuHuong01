@@ -24,6 +24,7 @@ public class Topic_00_Template {
 	public void TC_01_ValidateCurrentUrl() {
 		// Login Page Url matching
 		String loginPageUrl = driver.getCurrentUrl();
+		System.out.println(loginPageUrl);
 		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
 	}
 
@@ -37,7 +38,7 @@ public class Topic_00_Template {
 	@Test
 	public void TC_03_LoginFormDisplayed() {
 		// Login form displayed
-		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
+		Assert.assertFalse(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
 	}
 
 	@AfterClass
